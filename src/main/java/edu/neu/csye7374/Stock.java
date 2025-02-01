@@ -25,19 +25,18 @@ public abstract class Stock implements Tradeable {
 
     @Override
     public double getMetric() {
-    	if (prevPrices.size() < 2) {
+        if (prevPrices.size() < 2) {
             return 0; // Not enough data for calculation
         }
         double mean = prevPrices.stream().mapToDouble(i -> i).average().orElse(0.0);
         double deviationSum = 0.0;
 
         for (double num : prevPrices) {
-            deviationSum += (num - mean);
+            deviationSum += Math.pow(num - mean, 2);
         }
-        double avgDeviation = deviationSum / prevPrices.size();
-        return avgDeviation > 0.5 ? 1 : -1;
+        double standardDeviation = Math.sqrt(deviationSum / prevPrices.size());
+        return standardDeviation > 0.5 ? 1 : -1;
     }
-    
 
 
     public void recordPrice() {

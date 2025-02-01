@@ -1,4 +1,4 @@
-package StockLabAPI;
+package edu.neu.csye7374;
 
 public class PharmaStock extends Stock {
     private double bid;

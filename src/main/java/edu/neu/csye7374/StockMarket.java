@@ -1,4 +1,4 @@
-package StockLabAPI;
+package edu.neu.csye7374;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +38,8 @@ public class StockMarket {
     }
 
     public static void demo() {
+    	System.out.print("** Assigment 1 **");
+    	
         StockMarket market = StockMarket.getInstance();
 
         // Create Stock Objects
@@ -58,7 +60,6 @@ public class StockMarket {
             market.tradeStock(jnj, bid);
             
             // Print Stock Metrics after Each Trade
-            System.out.println("After bid " + bid + ":");
             System.out.println(netflix.name + " | Price: " + netflix.price + " | Metric: " + netflix.getMetric());
             System.out.println(jnj.name + " | Price: " + jnj.price + " | Metric: " + jnj.getMetric());
             System.out.println("--------------------------------");
