@@ -1,13 +1,13 @@
-package StockLabAPI;
+package edu.neu.csye7374;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Stock implements Tradeable {
-    protected String name;
-    protected double price;
-    protected String description;
-    protected List<Double> prevPrices; // Store previous prices
+    String name;
+    double price;
+    String description;
+    List<Double> prevPrices; // Store previous prices
 
     public Stock(String name, double price, String description) {
         this.name = name;
